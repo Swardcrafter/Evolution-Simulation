@@ -18,7 +18,7 @@ class CellClass {
 		} else {
 			ctx.fillStyle = "white";
 		}
-		ctx.fillRect(this.x, this.y, 1, 1);
+		ctx.fillRect(this.x, this.y, 3, 3);
 	}
 
 	update() {

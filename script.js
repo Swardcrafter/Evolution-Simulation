@@ -1,4 +1,7 @@
-let canvas = document.getElementById("life_canvas")
+let canvas = document.getElementById("life_canvas");
+let cell_number = 0;
+let cell_population_name = `Cell${cell_number}`;
+
 
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -15,6 +18,8 @@ const main_loop_inverval = setInterval(MainLoopStep, interval);
 
 document.addEventListener("keydown", function(event) {
 	if (event.key === "J" || event.key === "j") {
-		CellManager_01.add_population("Cell01 Population", Cell01, [50, 50], 300);
+		cell_population_name = `Cell${cell_number}`;
+		CellManager_01.add_population(cell_population_name, Cell01, [50, 30], 300);
+		cell_number++;
 	}
 });
