@@ -35,7 +35,7 @@ class Cell01 extends CellClass {
 	constructor(canvas, target_age, death_chance) {
 		super(canvas);
 		this.target_age = target_age;
-		this.death_check = death_chance;
+		this.death_chance = death_chance;
 	}
 
 	death_check() {
