@@ -41,8 +41,11 @@ class Cell01 extends CellClass {
 
 	death_check() {
 		if (this.alive == true) {
-			if (this.age > this.target_age && Math.random() < this.death_chance) {
-				this.alive = false;
+			if (this.age > this.target_age) {
+				if(Math.random() < this.death_chance) {
+					this.alive = false;
+				}
+				this.color = "red";
 			}
 		}
 	}

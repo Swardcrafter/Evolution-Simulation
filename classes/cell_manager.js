@@ -6,7 +6,7 @@ class CellManager {
 
 	add_population(name, class_, args=[], size = 100) {
 		let population = []
-		
+
 
 		for(let i = 0; i < size; i++) {
 			population.push(new class_(this.canvas, ...args));

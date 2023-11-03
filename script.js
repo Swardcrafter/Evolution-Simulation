@@ -15,14 +15,14 @@ function MainLoopStep() {
 }
 
 const interval = 100; // 100ms
-const main_loop_inverval = setInterval(MainLoopStep, interval);
+setInterval(MainLoopStep, interval);
 
 
 document.addEventListener("keydown", function(event) {
 	if (event.key === "J" || event.key === "j") {
 		cell_population_name = `Cell${cell_number}`;
 		let color = colors[Math.floor(Math.random() * colors.length)];
-		CellManager_01.add_population(cell_population_name, Cell01, [color, 50, 30], 300);
+		CellManager_01.add_population(cell_population_name, Cell01, ['blue', 60, 0.01], 300);
 		cell_number++;
 	}
 });
