@@ -18,6 +18,14 @@ const interval = 100; // 100ms
 setInterval(MainLoopStep, interval);
 
 
+document.addEventListener("click", function(event) {
+	cell_population_name = `Cell${cell_number}`;
+CellManager_01.add_population(cell_population_name, Cell01, ['blue', 60, 0.01], 300);
+	cell_number++;
+});
+
+
+
 document.addEventListener("keydown", function(event) {
 	if (event.key === "J" || event.key === "j") {
 		cell_population_name = `Cell${cell_number}`;
