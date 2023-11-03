@@ -34,6 +34,9 @@ class CellManager {
   }
 
   removeDuplicates(arr) {
+    console.log(JSON.stringify(arr));
+
+
     var seen = {}; // object to store the encountered elements
 
     for (var i = 0; i < arr.length; i++) {
