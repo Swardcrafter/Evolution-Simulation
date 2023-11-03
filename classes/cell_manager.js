@@ -33,39 +33,52 @@ class CellManager {
     return points
   }
 
-  removeDuplicates(arr) {
-    console.log(JSON.stringify(arr));
+	/*
+	removeDuplicates(arr) {
+	  var seen = {};
+	  var uniquePoints = [];
+	  var duplicateIndices = {};
+
+	  for (var i = 0; i < arr.length; i++) {
+		var instance = arr[i];
+		var point = [instance.x, instance.y];
+
+		// Check if the point is a duplicate
+		if (seen[point]) {
+		  if (duplicateIndices[seen[point]] === undefined) {
+			duplicateIndices[seen[point]] = [seen[point]];
+		  }
+		  duplicateIndices[seen[point]].push(i);
+
+		  // Set the 'alive' property to false for duplicates (except the first one)
+		  instance.alive = false;
+		} else {
+		  seen[point] = i;
+		  uniquePoints.push(point);
+		}
+	  }
+
+	  return arr;
+	}
+ 	*/
 
 
-    var seen = {}; // object to store the encountered elements
-
-    for (var i = 0; i < arr.length; i++) {
-      if (seen[arr[i]]) {
-        arr.splice(i, 1);
-        i--;
-      }
-      seen[arr[i]] = true;
-    }
-
-    return arr;
-  }
 
 
 	update() {
 		let ctx = this.canvas.getContext('2d');
 		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    let point_numbers = 0;
+	    let point_numbers = 0;
 		
 		for (const pop_name in this.populations) {
 			let population = this.populations[pop_name];
 			for (const class_ of population) {
-        if(class_.alive == true) {
-          class_.update();
-          point_numbers++;
-          
-        }
-				
+		        if(class_.alive == true) {
+		          class_.update();
+		          point_numbers++;
+		          
+		        }
 			}
 		}
 

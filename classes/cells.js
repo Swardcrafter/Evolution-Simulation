@@ -139,9 +139,6 @@ class GrowingCell01 extends CellClass {
   }
 
   class_specific() {
-    /*if(this.age > 15) {
-      this.alive = false;
-    }*/
     
     this.check_within_bounds();
     
