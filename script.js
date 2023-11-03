@@ -1,4 +1,4 @@
-import colors from './imports/colors.js';
+import colors from '/color_import/colors.js';
 
 let canvas = document.getElementById("life_canvas");
 let cell_number = 0;

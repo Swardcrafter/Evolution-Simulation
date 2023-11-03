@@ -9,7 +9,7 @@ class CellManager {
 		
 
 		for(let i = 0; i < size; i++) {
-			population.push(new class_(canvas, ...args));
+			population.push(new class_(this.canvas, ...args));
 		}
 
 		this.populations[name] = population;
