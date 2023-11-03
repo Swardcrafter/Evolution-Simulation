@@ -8,6 +8,7 @@ let cell_population_name = `Cell${cell_number}`;
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 */
+
 canvas.width = 50;
 canvas.height = 100;
 
