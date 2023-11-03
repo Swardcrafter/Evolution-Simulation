@@ -19,7 +19,8 @@ const main_loop_inverval = setInterval(MainLoopStep, interval);
 document.addEventListener("keydown", function(event) {
 	if (event.key === "J" || event.key === "j") {
 		cell_population_name = `Cell${cell_number}`;
-		CellManager_01.add_population(cell_population_name, Cell01, [50, 30], 300);
+		let color = colors[Math.floor(Math.random() * colors.length)];
+		CellManager_01.add_population(cell_population_name, color, Cell01, [50, 30], 300);
 		cell_number++;
 	}
 });

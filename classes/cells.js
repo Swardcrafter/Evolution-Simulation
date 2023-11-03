@@ -1,6 +1,7 @@
 class CellClass {
-	constructor(canvas) {
+	constructor(canvas, color) {
 		this.canvas = canvas;
+		this.color = color;
 		this.x = Math.floor(Math.random() * canvas.width);
 		this.y = Math.floor(Math.random() * canvas.height);
 		this.alive = true;
@@ -14,7 +15,7 @@ class CellClass {
 	draw() {
 		let ctx = this.canvas.getContext("2d")
 		if (this.alive) {
-			ctx.fillStyle = "black";
+			ctx.fillStyle = this.color;
 		} else {
 			ctx.fillStyle = "white";
 		}
@@ -32,8 +33,8 @@ class CellClass {
 
 
 class Cell01 extends CellClass {
-	constructor(canvas, target_age, death_chance) {
-		super(canvas);
+	constructor(canvas, color, target_age, death_chance) {
+		super(canvas, color);
 		this.target_age = target_age;
 		this.death_chance = death_chance;
 	}
