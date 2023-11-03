@@ -3,12 +3,18 @@ let canvas = document.getElementById("life_canvas")
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const CellManager = new CellManager(canvas);
 
-let cell1 = new Cell(canvas);
+function MainLoopStep() {
+	CellManager.update();
+}
+
+const interval = 100; // 100ms
+const main_loop_inverval = setInterval(MainLoopStep, mainLoopInterval);
 
 
-var myInterval = setInterval(function() {
-  let ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  cell1.play_step()
-}, 100);
+document.addEventListener("keydown", function(event) {
+	if (event.key === "J" || event.key === "j") {
+		CellManager.add_population("Cell01 Population", Cell01, [50, 50], 300);
+	}
+});
