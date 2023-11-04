@@ -21,7 +21,6 @@ class CellManager {
 
   get_cell_points() {
     let points = [];
-	
 
     for (const [key, value] of Object.entries(this.populations)) {
       for(let i = 0; i < value.length; i++) {
@@ -31,8 +30,25 @@ class CellManager {
         
       }
     }
+
     return points
   }
+
+
+	get_cell_antibio_resistances() {
+		let points = [];
+
+		for (const [key, value] of Object.entries(this.populations)) {
+		  for(let i = 0; i < value.length; i++) {
+			if(value[i].alive == true) {
+			  points.push(value[i].genetics["antibio_resistance"]);
+			}
+
+		  }
+		}
+
+		return points
+	  }
 
 	/*
 	removeDuplicates(arr) {
@@ -70,19 +86,34 @@ class CellManager {
 		let ctx = this.canvas.getContext('2d');
 		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+		// Draw Colors for Different Levels of AntiBio
+		ctx.fillStyle = '#DDF2FD';  // Light blue
+		ctx.fillRect(200, 0, 200, this.canvas.height);
+
+		ctx.fillStyle = '#9BBEC8';  // Another shade of blue
+		ctx.fillRect(400, 0, 200, this.canvas.height);
+
+		ctx.fillStyle = '#427D9D';  // Darker blue
+		ctx.fillRect(600, 0, 200, this.canvas.height);
+
+		ctx.fillStyle = '#164863';  // Even darker blue
+		ctx.fillRect(800, 0, this.canvas.width - 800, this.canvas.height);
+
+
 	    let point_numbers = 0;
+		let point_numbers_2 = 0;
 		
 		for (const pop_name in this.populations) {
 			let population = this.populations[pop_name];
 			for (const class_ of population) {
+				point_numbers_2++;
 		        if(class_.alive == true) {
 		          class_.update();
 		          point_numbers++;
-		          
 		        }
 			}
 		}
 
-    document.getElementById("output_text").innerText = point_numbers;
+    document.getElementById("output_text").innerText = `Cell Count: ${point_numbers}`;
 	}
 }

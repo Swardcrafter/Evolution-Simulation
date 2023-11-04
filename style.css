@@ -1,7 +1,22 @@
 html {
   height: 100%;
   width: 100%;
+background-color: #D3D3D3;
 }
 canvas {
   border: 1px solid blue;
+}
+
+.color-info {
+  display: flex;
+  /*justify-content: space-between; */
+  padding: 10px;
+}
+.color-box {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+}
+.antibio-info {
+  margin-left: 10px; /* Add margin to separate text from color box */
 }
