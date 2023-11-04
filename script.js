@@ -42,6 +42,11 @@ document.addEventListener("keydown", function(event) {
 		);
 		cell_number++;
 	}
+	if(event.key === 'r') {
+		CellManager_01.populations = {};
+		CellManager_01.update();
+		document.getElementById("output_text_2").innerText = "Average Antibio Resistance: 10.00";
+	}
 });
 
 
