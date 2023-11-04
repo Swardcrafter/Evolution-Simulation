@@ -72,6 +72,16 @@ class GrowingCell01 extends CellClass {
     this.placeholder_number = 0;
   }
 
+	isSubArrayInArray(subArray, arrayOfArrays) {
+	  return arrayOfArrays.some(arr => {
+		return arr.every((element, index) => element === subArray[index]);
+	  });
+	}
+
+	check_duplicate(point) {
+		return this.isSubArrayInArray(point, this.cell_manager.get_cell_points())
+	}
+
   check_point_grow(point) {
     if(this.age % 2 == 0) {
     
@@ -84,37 +94,39 @@ class GrowingCell01 extends CellClass {
 
       if(random_numb == 0) {
         
-      
         new_point = [point[0]-10, point[1]];
-        if(all_points.includes(new_point) == false) {
-          this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
-          
+        if(this.check_duplicate(new_point) == false) {
+			if(this.check_within_bounds(new_point) == false) {
+				this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
+			}
         }
 
       } else if(random_numb == 1) {
 
         // Right
         new_point = [point[0]+10, point[1]];
-        if(all_points.includes(new_point) == false) {
-          this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
-
+        if(this.check_duplicate(new_point) == false) {
+			if(this.check_within_bounds(new_point) == false) {
+				this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
+			}
         }
       } else if(random_numb == 2) {
         // Up
 
         new_point = [point[0], point[1]-10];
-        if(all_points.includes(new_point) == false) {
-          this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
-
+        if(this.check_duplicate(new_point) == false) {
+			if(this.check_within_bounds(new_point) == false) {
+				this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
+			}
         }
       } else if(random_numb == 3) {
         // Down
 
         new_point = [point[0], point[1]+10];
-
-        if(all_points.includes(new_point) == false) {
-          this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
-
+        if(this.check_duplicate(new_point) == false) {
+			if(this.check_within_bounds(new_point) == false) {
+				this.cell_manager.add_to_population(this.population_name, GrowingCell01, [this.population_name, 'orange', new_point]);
+			}
         }
       }
       
@@ -127,10 +139,11 @@ class GrowingCell01 extends CellClass {
     
 
   
-  check_within_bounds() {
-    if(this.x < 0 || this.x > this.canvas.width - 10 || this.y < 0 || this.y > this.canvas.height - 10) {
-      this.alive = false;
+  check_within_bounds(point) {
+    if(point[0] < 0 || point[0] > this.canvas.width - 10 || point[1] < 0 || point[1] > this.canvas.height - 10) {
+      return true;
     }
+	return false;
   }
 
 
@@ -139,8 +152,10 @@ class GrowingCell01 extends CellClass {
   }
 
   class_specific() {
+	if(this.check_within_bounds([this.x, this.y])) {
+		this.alive = false;
+	}
     
-    this.check_within_bounds();
     
     this.reproduce();
 

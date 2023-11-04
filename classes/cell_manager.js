@@ -21,6 +21,7 @@ class CellManager {
 
   get_cell_points() {
     let points = [];
+	
 
     for (const [key, value] of Object.entries(this.populations)) {
       for(let i = 0; i < value.length; i++) {
