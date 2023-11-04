@@ -35,7 +35,7 @@ document.addEventListener("keydown", function(event) {
 			 	{
 					antibio_resistance: 10
 				}, 
-				'green', 
+				'orange', 
 				[0, 0]
 			], 
 			1

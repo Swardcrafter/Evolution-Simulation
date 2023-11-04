@@ -229,7 +229,7 @@ class GrowingCell02 extends CellClass {
 			}
 
 			if (this.check_duplicate(new_point) == false && this.check_outside_bounds(new_point, [[0, this.canvas.width], [0, this.canvas.height]]) == false) {
-			  this.cell_manager.add_to_population(this.population_name, GrowingCell02, [this.population_name, this.pass_down_genetics(), 'green', new_point]);
+			  this.cell_manager.add_to_population(this.population_name, GrowingCell02, [this.population_name, this.pass_down_genetics(), this.color, new_point]);
 			}
 		  }
 
