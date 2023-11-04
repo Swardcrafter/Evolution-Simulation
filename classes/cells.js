@@ -316,7 +316,9 @@ class GrowingCell02 extends CellClass {
 	  }
 	}
 
-
-	this.reproduce();
+	if(this.alive == true) {
+		this.reproduce();
+	}
+	
   }
 }

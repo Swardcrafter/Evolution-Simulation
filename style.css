@@ -7,6 +7,8 @@ canvas {
   border: 1px solid blue;
 }
 
+
+
 .color-info {
   display: flex;
   /*justify-content: space-between; */
@@ -19,4 +21,100 @@ canvas {
 }
 .antibio-info {
   margin-left: 10px; /* Add margin to separate text from color box */
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600&family=Lato&family=Roboto:wght@700;900&display=swap");
+
+.card-div {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+  background-image: linear-gradient(to bottom right, #3d3d3d, #2b2b2b);
+  width: 500px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.card-div:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+.card-container {
+  height: 600px;
+}
+
+.card-header {
+  border-radius: 15px;
+  height: 30%;
+  background-image: linear-gradient(to bottom right, #1f1f1f, #121212);
+  display: flex; /* Add this to enable flexbox layout */
+  justify-content: left; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.card-pfp {
+  border-radius: 15px;
+  height: 100px;
+  width: 100px;
+  margin: 5%;
+  background-image: linear-gradient(to bottom right, #ffb329, #bf7c00);
+  box-shadow: 0 4px 8px 0 rgba(255, 165, 0, 0.5);
+  transition: 0.3s;
+}
+
+.card-pfp:hover {
+  box-shadow: 0 8px 13px 0 rgba(255, 165, 0, 0.5);
+}
+
+.card-header-text {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  background: linear-gradient(to bottom right, #ffb329, #bf7c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-header span {
+  /*font-weight: bold;*/
+  font-size: 40px;
+  background: linear-gradient(to bottom right, #ffb329, #bf7c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-var {
+  background: linear-gradient(to bottom right, #1f1f1f, #121212);
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+
+.card-var:hover {
+  box-shadow: 0 6px 13px 0 rgba(0, 0, 0, 0.6);
+}
+
+.card-var-content {
+  padding: 10px;
+}
+
+.card-var h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 5000;
+  font-size: 15px;
+  background: linear-gradient(to bottom right, #ffb329, #bf7c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-var p {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  background: linear-gradient(to bottom right, #ffb329, #bf7c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

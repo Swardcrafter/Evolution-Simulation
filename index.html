@@ -9,6 +9,9 @@
 </head>
 
 <body>
+	<script src="before_load.js"></script>
+
+	
   <canvas id="life_canvas"></canvas>
 
   <div class="color-info">
@@ -31,12 +34,54 @@
   <p id="output_text"></p>
   <p id="output_text_2">Average Antibio Resistance: 10.00</p>
 
+
+	
+
+	<div class="card-div">
+	  <div class='card-container'>
+		<div class='card-header'>
+		  <div class='card-pfp'></div>
+		  <div class='card-header-text' id="cell-profile-name" onclick="click_card('name')">Cell 01</div>
+		</div>
+		<div class='card-body'>
+		  <div class="card-var" onclick="click_card('antibio_res')">
+			<div class="card-var-content">
+			  <h2 id="antibio_res_text">Antibio Resistance: 10.00</h2>
+			  <p>Starting Resistance of the cell.</p>
+			</div>
+		  </div>
+
+		  <!-- Card 2 -->
+		  <div class="card-var"  onclick="click_card('color')">
+			<div class="card-var-content">
+			  <h2 id="color_text">Color: Orange</h2>
+			  <p>Color of the Cell.</p>
+			</div>
+		  </div>
+
+			<!-- Card 3 -->
+			  <div class="card-var" onclick="click_card('position')">
+				<div class="card-var-content">
+				  <h2 id="position_text">Position: (0, 0)</h2>
+				  <p>Starting Position of the Cell</p>
+				</div>
+			  </div>
+
+		</div>
+	  </div>
+	</div>
+
+
+	<canvas id="graph_01" width=500></canvas>
+	<canvas id="graph_02" width=500></canvas>
+
   <!-- Imports: -->
 
   <script src="color_import/colors.js" type="module"></script>
 
   <script src="classes/cell_manager.js"></script>
   <script src="classes/cells.js"></script>
+<script src="classes/graph.js"></script>
 
   <script src="script.js" type="module"></script>
 </body>
